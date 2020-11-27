@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">homeBuch</string>
+    <string name="incomingMoney_text">income</string>
+    <string name="costMoney_text">costs</string>
+    <string name="allMoney_text">all</string>
+    <string name="addNewMovingMoney_text">add income/costs</string>
 </resources>

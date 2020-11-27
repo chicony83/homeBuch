@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">homeBuch</string>
+    <string name="incomingMoney_text">доходы</string>
+    <string name="costMoney_text">расходы</string>
+    <string name="allMoney_text">все</string>
+    <string name="addNewMovingMoney_text">добавить приход/расход</string>
+</resources>

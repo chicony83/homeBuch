@@ -14,25 +14,19 @@
         tools:ignore="MissingConstraints">
 
         <Button
+            style="@style/MainButtons"
             android:id="@+id/incomingMoney_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="доходы" />
+            android:text="@string/incomingMoney_text" />
 
         <Button
+            style="@style/MainButtons"
             android:id="@+id/costMoney_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="расходы" />
+            android:text="@string/costMoney_text" />
 
         <Button
+            style="@style/MainButtons"
             android:id="@+id/allMovingMoney_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="все" />
+            android:text="@string/allMoney_text" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -44,9 +38,11 @@
         tools:ignore="MissingConstraints" />
 
     <Button
+        android:text="@string/addNewMovingMoney_text"
         android:id="@+id/addNewMovingMoney_button"
+        style="@style/MainButtons"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+
         app:layout_constraintBottom_toBottomOf="parent" />
 
 
