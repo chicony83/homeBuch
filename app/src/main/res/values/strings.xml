@@ -4,4 +4,7 @@
     <string name="costMoney_text">costs</string>
     <string name="allMoney_text">all</string>
     <string name="addNewMovingMoney_text">add income/costs</string>
+    <string name="addingNewMoneyMove_text">adding</string>
+    <string name="description_text">description</string>
+    <string name="description_editText">add a description if necessary</string>
 </resources>

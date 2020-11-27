@@ -5,4 +5,6 @@
     <string name="costMoney_text">расходы</string>
     <string name="allMoney_text">все</string>
     <string name="addNewMovingMoney_text">добавить приход/расход</string>
+    <string name="addingNewMoneyMove_text">добавление</string>
+    <string name="description_editText">добавьте описание</string>
 </resources>
