@@ -10,6 +10,9 @@ interface MovingMoneyDao {
     @Query("SELECT * FROM moving_money_table")
     suspend fun getMovingMoneyInfo(): List<MovingMoneyInfo>
 
+    @Query("SELECT * FROM moving_money_table WHERE moneyView = :view")
+    suspend fun getMovingMoneyInfoIncomeOrCosts(view: Int)
+
     @Insert
     suspend fun addMovingMoney(movingMoneyInfo: MovingMoneyInfo)
 }
