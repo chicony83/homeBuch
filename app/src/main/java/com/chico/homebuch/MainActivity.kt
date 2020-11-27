@@ -4,6 +4,7 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.view.WindowManager
 import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -21,33 +22,17 @@ class MainActivity : AppCompatActivity() {
     private lateinit var moneyAdapter: MoneyAdapter
     private lateinit var recyclerView: RecyclerView
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         setActivityFlags()
         setActivityOrientation()
+        initRecycler()
+        updateRecycler()
 
 
-        moneyAdapter = MoneyAdapter()
-        recyclerView = findViewById(R.id.recycler_view)
-
-        recyclerView.apply {
-            adapter = moneyAdapter
-            layoutManager = LinearLayoutManager(this@MainActivity)
-        }
-
-        CoroutineScope(Dispatchers.IO).launch {
-            val moneyList = movingDao?.getMovingMoneyInfo()
-            withContext(Dispatchers.Main) {
-                if (moneyList != null) {
-                    moneyAdapter.updateList(moneyList)
-                }
-            }
-        }
         val addNewMoneyMovingButton = findViewById<Button>(R.id.addNewMovingMoney_button)
-
         addNewMoneyMovingButton.setOnClickListener {
             startActivity(
                 Intent(this, AddNewmoneyMovingActivity::class.java)
@@ -66,4 +51,43 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
+    private fun initRecycler() {
+        moneyAdapter = MoneyAdapter()
+        recyclerView = findViewById(R.id.recycler_view)
+
+        recyclerView.apply {
+            adapter = moneyAdapter
+            layoutManager = LinearLayoutManager(this@MainActivity)
+        }
+    }
+
+    private fun updateRecycler() {
+        CoroutineScope(Dispatchers.IO).launch {
+            val moneyList = movingDao?.getMovingMoneyInfo()
+            withContext(Dispatchers.Main) {
+                if (moneyList != null) {
+                    moneyAdapter.updateList(moneyList)
+                }
+            }
+        }
+    }
+
+    private fun updateRecyclerWithCondition(view: Int){
+        CoroutineScope(Dispatchers.IO).launch {
+            val moneyList = movingDao?.getMovingMoneyInfoIncomeOrCosts(view)
+            withContext(Dispatchers.Main) {
+                if (moneyList != null) {
+                    moneyAdapter.updateList(moneyList)
+                }
+            }
+        }
+    }
+
+    fun onClick(view: View) {
+        when (view.id) {
+            R.id.incomingMoney_button -> {updateRecyclerWithCondition(1)}
+            R.id.costMoney_button -> {updateRecyclerWithCondition(0)}
+            R.id.allMovingMoney_button -> {updateRecycler()}
+        }
+    }
 }
