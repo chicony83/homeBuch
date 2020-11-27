@@ -12,13 +12,19 @@ abstract class AppDataBase : RoomDatabase() {
     abstract fun getMoneyDao(): MovingMoneyDao
 
     companion object {
+        private var INSTANCE : AppDataBase? = null
         fun getInstance(context: Context): AppDataBase? {
-            return Room.databaseBuilder(
-                context,
-                AppDataBase::class.java,
-                "moving_money_db"
-            )
-                .build()
+            if (INSTANCE == null){
+                synchronized(AppDataBase::class){
+                    INSTANCE =  Room.databaseBuilder(
+                        context,
+                        AppDataBase::class.java,
+                        "moving_money_db"
+                    )
+                        .build()
+                }
+            }
+            return INSTANCE
         }
     }
 }
