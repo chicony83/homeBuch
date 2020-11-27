@@ -1,9 +1,11 @@
 package com.chico.homebuch
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.WindowManager
 import android.widget.Button
 import com.chico.homebuch.database.AppDataBase
 import com.chico.homebuch.database.entity.MovingMoneyInfo
@@ -19,6 +21,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        setActivityFlags()
+        setActivityOrientation()
+
+
         CoroutineScope(Dispatchers.IO).launch {
             Log.e("TAG", movingDao?.getMovingMoneyInfo().toString())
         }
@@ -30,4 +36,16 @@ class MainActivity : AppCompatActivity() {
             )
         }
     }
+
+    private fun setActivityOrientation() {
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+    }
+
+    private fun setActivityFlags() {
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
+    }
+
 }
