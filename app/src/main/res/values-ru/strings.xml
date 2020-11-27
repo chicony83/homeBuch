@@ -7,4 +7,6 @@
     <string name="addNewMovingMoney_text">добавить приход/расход</string>
     <string name="addingNewMoneyMove_text">добавление</string>
     <string name="description_editText">добавьте описание</string>
+    <string name="description_text">Описание</string>
+    <string name="enter_sum">Введите сумму</string>
 </resources>

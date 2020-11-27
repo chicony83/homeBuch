@@ -53,6 +53,4 @@
         android:src="@drawable/ic_edit_24"
         style="@style/MainButtons"/>
 
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
