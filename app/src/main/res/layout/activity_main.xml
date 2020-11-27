@@ -16,17 +16,20 @@
         <Button
             style="@style/MainButtons"
             android:id="@+id/incomingMoney_button"
-            android:text="@string/incomingMoney_text" />
+            android:text="@string/incomingMoney_text"
+            android:onClick="onClick"/>
 
         <Button
             style="@style/MainButtons"
             android:id="@+id/costMoney_button"
-            android:text="@string/costMoney_text" />
+            android:text="@string/costMoney_text"
+            android:onClick="onClick"/>
 
         <Button
             style="@style/MainButtons"
             android:id="@+id/allMovingMoney_button"
-            android:text="@string/allMoney_text" />
+            android:text="@string/allMoney_text"
+            android:onClick="onClick"/>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
