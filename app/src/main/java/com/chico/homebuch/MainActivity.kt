@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.chico.homebuch.adapter.MoneyAdapter
 import com.chico.homebuch.database.AppDataBase
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -33,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         updateRecycler()
 
 
-        val addNewMoneyMovingButton = findViewById<Button>(R.id.addNewMovingMoney_button)
+        val addNewMoneyMovingButton = findViewById<FloatingActionButton>(R.id.addNewMovingMoney_button)
         addNewMoneyMovingButton.setOnClickListener {
             startActivityForResult(
                 Intent(this, AddNewmoneyMovingActivity::class.java),
