@@ -14,6 +14,8 @@ import com.chico.homebuch.database.entity.MovingMoneyInfo
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.*
 
 class AddNewmoneyMovingActivity : AppCompatActivity() {
 
@@ -46,21 +48,23 @@ class AddNewmoneyMovingActivity : AppCompatActivity() {
     }
 
     private fun addInDataBase() {
-        if (descriptionEt.text.isNotEmpty() && sumEt.text.isNotEmpty()) {
+        if (descriptionEt.text.isNotEmpty() && sumEt.text.isNotEmpty() && (incomingRb.isChecked || costRb.isChecked)) {
             val desc = descriptionEt.text.toString()
             val sum = sumEt.text.toString().toDouble()
-            val view = if (incomingRb.isChecked){
+            val view = if (incomingRb.isChecked) {
                 1
             } else {
                 0
             }
+            val dateForm = SimpleDateFormat("dd.MM.yyyy")
+            val curDate = dateForm.format(Date())
             CoroutineScope(Dispatchers.IO).launch {
                 moneyDao?.addMovingMoney(
                     MovingMoneyInfo(
                         total = sum,
                         moneyView = view,
                         description = desc,
-                        date = "10.02.2020"
+                        date = curDate
                     )
                 )
             }
