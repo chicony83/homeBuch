@@ -1,5 +1,6 @@
 package com.chico.homebuch
 
+import android.app.Activity
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
@@ -34,8 +35,9 @@ class MainActivity : AppCompatActivity() {
 
         val addNewMoneyMovingButton = findViewById<Button>(R.id.addNewMovingMoney_button)
         addNewMoneyMovingButton.setOnClickListener {
-            startActivity(
-                Intent(this, AddNewmoneyMovingActivity::class.java)
+            startActivityForResult(
+                Intent(this, AddNewmoneyMovingActivity::class.java),
+                1010
             )
         }
     }
@@ -88,6 +90,13 @@ class MainActivity : AppCompatActivity() {
             R.id.incomingMoney_button -> {updateRecyclerWithCondition(1)}
             R.id.costMoney_button -> {updateRecyclerWithCondition(0)}
             R.id.allMovingMoney_button -> {updateRecycler()}
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 1010 && resultCode == Activity.RESULT_OK){
+            updateRecycler()
         }
     }
 }
