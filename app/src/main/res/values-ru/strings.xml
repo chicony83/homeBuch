@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">homeBuch</string>
+    <string name="app_name">home bookkeeping</string>
     <string name="incomingMoney_text">доходы</string>
     <string name="costMoney_text">расходы</string>
     <string name="allMoney_text">все</string>

@@ -1,8 +1,12 @@
 package com.chico.homebuch
 
+import android.content.Intent
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.WindowManager
+import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.chico.homebuch.adapter.MoneyAdapter
@@ -24,6 +28,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        setActivityFlags()
+        setActivityOrientation()
+
+
         moneyAdapter = MoneyAdapter()
         recyclerView = findViewById(R.id.recycler_view)
 
@@ -40,5 +48,24 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+        val addNewMoneyMovingButton = findViewById<Button>(R.id.addNewMovingMoney_button)
+
+        addNewMoneyMovingButton.setOnClickListener {
+            startActivity(
+                Intent(this, AddNewmoneyMovingActivity::class.java)
+            )
+        }
     }
+
+    private fun setActivityOrientation() {
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+    }
+
+    private fun setActivityFlags() {
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
+    }
+
 }
