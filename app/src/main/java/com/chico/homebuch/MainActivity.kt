@@ -28,11 +28,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        setActivityFlags()
-        setActivityOrientation()
         initRecycler()
         updateRecycler()
-
 
         val addNewMoneyMovingButton = findViewById<FloatingActionButton>(R.id.addNewMovingMoney_button)
         addNewMoneyMovingButton.setOnClickListener {
@@ -41,17 +38,6 @@ class MainActivity : AppCompatActivity() {
                 1010
             )
         }
-    }
-
-    private fun setActivityOrientation() {
-        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-    }
-
-    private fun setActivityFlags() {
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
-        )
     }
 
     private fun initRecycler() {

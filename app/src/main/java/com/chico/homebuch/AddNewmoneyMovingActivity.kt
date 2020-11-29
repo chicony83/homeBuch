@@ -31,8 +31,6 @@ class AddNewmoneyMovingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_new_money_moving)
-        setActivityFlags()
-        setActivityOrientation()
         initLayout()
     }
 
@@ -56,8 +54,6 @@ class AddNewmoneyMovingActivity : AppCompatActivity() {
             } else {
                 0
             }
-//            val dateForm = SimpleDateFormat("dd.MM.yyyy")
-//            val curDate = dateForm.format(Date())
             val curDate = System.currentTimeMillis()
 
             CoroutineScope(Dispatchers.IO).launch {
@@ -76,16 +72,4 @@ class AddNewmoneyMovingActivity : AppCompatActivity() {
             Toast.makeText(this, "Заполните все поля", Toast.LENGTH_SHORT).show()
         }
     }
-
-    private fun setActivityOrientation() {
-        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-    }
-
-    private fun setActivityFlags() {
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN
-        )
-    }
-
 }
