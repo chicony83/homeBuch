@@ -9,6 +9,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.chico.homebuch.R
 import com.chico.homebuch.database.entity.MovingMoneyInfo
+import java.text.SimpleDateFormat
 
 class MoneyAdapter : RecyclerView.Adapter<MoneyAdapter.MoneyVH>() {
 
@@ -46,7 +47,8 @@ class MoneyAdapter : RecyclerView.Adapter<MoneyAdapter.MoneyVH>() {
         }
 
         fun bind(money: MovingMoneyInfo) {
-            dateTv.text = money.date
+            val dataTime = transferDataTime(money.date)
+            dateTv.text = dataTime
             descriptionTv.text = money.description
             totalTv.text = money.total.toString()
 
@@ -70,5 +72,12 @@ class MoneyAdapter : RecyclerView.Adapter<MoneyAdapter.MoneyVH>() {
                 }
             }
         }
+
+        private fun transferDataTime(long:Long): String? {
+            val sdf = SimpleDateFormat("dd/M/yyyy HH:mm:ss")
+            return sdf.format(long);
+
+        }
     }
+
 }

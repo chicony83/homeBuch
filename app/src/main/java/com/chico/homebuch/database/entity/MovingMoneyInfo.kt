@@ -10,5 +10,5 @@ data class MovingMoneyInfo(
     val total: Double,
     val moneyView: Int,
     val description: String,
-    val date: String
+    val date: Long
 )

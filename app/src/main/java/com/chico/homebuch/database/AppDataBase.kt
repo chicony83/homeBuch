@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.chico.homebuch.database.dao.MovingMoneyDao
 import com.chico.homebuch.database.entity.MovingMoneyInfo
 
-@Database(entities = [MovingMoneyInfo::class], version = 1, exportSchema = false)
+@Database(entities = [MovingMoneyInfo::class], version = 2, exportSchema = false)
 abstract class AppDataBase : RoomDatabase() {
     abstract fun getMoneyDao(): MovingMoneyDao
 

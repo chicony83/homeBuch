@@ -56,8 +56,10 @@ class AddNewmoneyMovingActivity : AppCompatActivity() {
             } else {
                 0
             }
-            val dateForm = SimpleDateFormat("dd.MM.yyyy")
-            val curDate = dateForm.format(Date())
+//            val dateForm = SimpleDateFormat("dd.MM.yyyy")
+//            val curDate = dateForm.format(Date())
+            val curDate = System.currentTimeMillis()
+
             CoroutineScope(Dispatchers.IO).launch {
                 moneyDao?.addMovingMoney(
                     MovingMoneyInfo(
