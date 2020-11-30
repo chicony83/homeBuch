@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/MainStatisticsArea"
+    tools:ignore="MissingConstraints">
+
+    <TableRow android:gravity="center">
+
+        <TextView android:text="за 24 часа" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            style="@style/MainStatisticsRow_text"
+            android:text="@string/incomingMoney_text" />
+
+        <TextView
+            android:id="@+id/incomingMoney24hour_value"
+            style="@style/MainStatisticsRow_value"
+            android:text="0" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            style="@style/MainStatisticsRow_text"
+            android:text="@string/costMoney_text" />
+
+        <TextView
+            android:id="@+id/costsMoney24hour_value"
+            style="@style/MainStatisticsRow_value"
+            android:text="0" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            style="@style/MainStatisticsRow_text"
+            android:text="@string/balance_text" />
+
+        <TextView
+            android:id="@+id/totalMoney24hour_value"
+            style="@style/MainStatisticsRow_value"
+            android:text="0" />
+    </TableRow>
+
+</TableLayout>
+

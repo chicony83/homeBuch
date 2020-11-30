@@ -10,4 +10,8 @@
     <string name="description_text">описание</string>
     <string name="enter_sum">введите сумму</string>
     <string name="reports_buttonText">отчеты</string>
+    <string name="balance_text">баланс</string>
+    <string name="header_24_hour">за 24 часа</string>
+    <string name="header_at_last_30_days">за последние 30 дней</string>
+    <string name="header_beginning_month">с начала месяца</string>
 </resources>

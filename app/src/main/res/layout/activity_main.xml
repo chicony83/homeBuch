@@ -6,6 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+<!--        <include layout="@layout/money_beginning_of_the_month" />-->
+
+        <include layout="@layout/money_24_hour" />
+        <include layout="@layout/money_beginning_of_the_month" />
+        <include layout="@layout/money_per_last_month" />
+
+<!--        <include layout="@layout/money_per_last_month" />-->
+
+
+
+    </LinearLayout>
 
     <include
         layout="@layout/floating_button"
@@ -16,10 +34,10 @@
 
     <Button
         android:id="@+id/reportsButton"
-        android:textSize="@dimen/H2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/reports_buttonText"
+        android:textSize="@dimen/H2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

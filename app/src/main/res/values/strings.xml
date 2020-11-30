@@ -9,4 +9,8 @@
     <string name="description_editText">add a description if necessary</string>
     <string name="enter_sum">Enter sum</string>
     <string name="reports_buttonText">reports</string>
+    <string name="balance_text">balance</string>
+    <string name="header_24_hour">last 24 hour</string>
+    <string name="header_at_last_30_days">at last 30 days</string>
+    <string name="header_beginning_month">beginning of the month</string>
 </resources>
