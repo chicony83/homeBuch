@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddNewmoneyMovingActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.AddMoneyMovingFragment">
 
     <TextView
-        android:id="@+id/textViewHeader"
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -55,43 +55,43 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/tv_description"
+        android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/description_text"
         android:textSize="@dimen/H2"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <EditText
+        android:id="@+id/description_et"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/doubleMargin"
+        android:gravity="start"
+        android:hint="@string/description_editText"
+        android:padding="@dimen/doubleMargin"
+        app:layout_constraintBottom_toTopOf="@+id/sum_et"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:layout_editor_absoluteX="16dp"
+        android:inputType="text"/>
 
     <EditText
         android:id="@+id/sum_et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/doubleMargin"
+        android:layout_margin="@dimen/normalMargin"
+        app:layout_constraintBottom_toTopOf="@+id/addingInBase_button"
+        tools:layout_editor_absoluteX="8dp"
         android:hint="@string/enter_sum"
         android:inputType="number"
-        android:singleLine="true"
-        app:layout_constraintTop_toBottomOf="@+id/tv_description"
-        tools:layout_editor_absoluteX="16dp"
-        android:importantForAutofill="no" />
-
-    <EditText
-        android:id="@+id/description_et"
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:layout_margin="@dimen/doubleMargin"
-        android:gravity="start"
-        android:hint="@string/description_editText"
-        app:layout_constraintTop_toBottomOf="@+id/sum_et"
-        android:importantForAutofill="no" />
+        android:singleLine="true"/>
 
     <Button
+        android:text="@string/addingNewMoneyMove_text"
         android:id="@+id/addingInBase_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/normalMargin"
-        android:text="@string/addingNewMoneyMove_text"
         app:layout_constraintBottom_toBottomOf="parent" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

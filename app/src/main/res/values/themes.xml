@@ -14,7 +14,6 @@
         <!-- Customize your theme here. -->
     </style>
 
-
     <style name="MainButtons" parent="WrapContent_WrapContent">
         <item name="android:layout_weight">1</item>
         <item name="android:layout_margin">@dimen/normalMargin</item>

@@ -10,7 +10,14 @@
     <string name="description_text">Описание</string>
     <string name="enter_sum">Введите сумму</string>
     <string name="reports_buttonText">отчеты</string>
+    <string name="balance_text">баланс</string>
+    <string name="header_24_hour">за 24 часа</string>
+    <string name="header_at_last_30_days">за последние 30 дней</string>
+    <string name="header_beginning_month">с начала месяца</string>
     <string name="receipt_transactions">Приходные операции</string>
     <string name="expenditure_operations">Расходные операции</string>
-    <string name="input_data_text">Заполните все поля!</string>
+    <string name="input_data_text">Введите все данные</string>
+    <string name="enter_you_money">Введите ваш баланс</string>
+    <string name="start">Начать</string>
+    <string name="hello">Привет</string>
 </resources>

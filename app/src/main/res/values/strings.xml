@@ -9,7 +9,15 @@
     <string name="description_editText">Add a description if necessary</string>
     <string name="enter_sum">Enter sum</string>
     <string name="reports_buttonText">reports</string>
+    <string name="balance_text">balance</string>
+    <string name="header_24_hour">last 24 hour</string>
+    <string name="header_at_last_30_days">at last 30 days</string>
+    <string name="header_beginning_month">beginning of the month</string>
     <string name="receipt_transactions">Receipt transactions</string>
     <string name="expenditure_operations">Expenditure operations</string>
     <string name="input_data_text">Input all data!</string>
+    <string name="enter_you_money">Enter you money</string>
+    <string name="start">Start</string>
+    <string name="hello">Hello</string>
+    <string name="statistics">Statistics</string>
 </resources>

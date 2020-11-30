@@ -6,22 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-    <include
-        layout="@layout/floating_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/reportsButton"
-        android:textSize="@dimen/H2"
-        android:layout_margin="@dimen/doubleMargin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/reports_buttonText"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <fragment
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:defaultNavHost="true"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:navGraph="@navigation/nav_graph"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

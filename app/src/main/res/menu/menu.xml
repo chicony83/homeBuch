@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/all_money_menu_item"
+        android:title="@string/allMoney_text"
+        android:icon="@drawable/ic_all"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/income_money_menu_item"
+        android:title="@string/incomingMoney_text"
+        android:icon="@drawable/ic_income"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/costs_money_menu_item"
+        android:title="@string/costMoney_text"
+        android:icon="@drawable/ic_costs"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/statistics_menu_item"
+        android:title="@string/statistics"
+        android:icon="@drawable/ic_info"
+        app:showAsAction="ifRoom"/>
+
+</menu>
