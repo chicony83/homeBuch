@@ -1,10 +1,11 @@
-package com.chico.homebuch
+package com.chico.homebuch.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.chico.homebuch.R
 
 class FastReportsFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
