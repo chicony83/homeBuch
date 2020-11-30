@@ -7,6 +7,7 @@ import androidx.room.PrimaryKey
 data class MovingMoneyInfo(
     @PrimaryKey(autoGenerate = true)
     var id: Int? = null,
+    val sum: Double,
     val total: Double,
     val moneyView: Int,
     val description: String,

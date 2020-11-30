@@ -10,4 +10,6 @@
     <string name="description_text">описание</string>
     <string name="enter_sum">введите сумму</string>
     <string name="reports_buttonText">отчеты</string>
+    <string name="enter_you_money">Введите ваши деньги</string>
+    <string name="start">Начать</string>
 </resources>

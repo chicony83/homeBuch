@@ -32,19 +32,30 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/date_tv"
             app:layout_constraintBottom_toBottomOf="parent"
-            tools:text="Total"
+            tools:text="Description"
             android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/total_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/date_tv"
+            tools:text="Total" />
+
+        <TextView
+            android:id="@+id/sum_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/total_tv"
             android:layout_margin="16dp"
             android:textSize="24sp"
-            tools:text="Total"
+            tools:text="Sum"
             android:textColor="@color/black"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

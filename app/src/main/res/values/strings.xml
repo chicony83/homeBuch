@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">home bookkeeping</string>
+    <string name="app_name">домашняя бухгалтерия</string>
     <string name="incomingMoney_text">income</string>
     <string name="costMoney_text">costs</string>
     <string name="allMoney_text">all</string>
@@ -9,4 +9,8 @@
     <string name="description_editText">add a description if necessary</string>
     <string name="enter_sum">Enter sum</string>
     <string name="reports_buttonText">reports</string>
+    <string name="enter_you_money">Enter you money</string>
+    <string name="start">Start</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

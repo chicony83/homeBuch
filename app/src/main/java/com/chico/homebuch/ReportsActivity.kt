@@ -17,7 +17,7 @@ import kotlinx.coroutines.withContext
 
 class ReportsActivity : AppCompatActivity() {
 
-    private val movingDao by lazy { AppDataBase.getInstance(application)?.getMoneyDao() }
+    private val movingDao by lazy { AppDataBase.getInstance(application)?.getMovingMoneyDao() }
     private lateinit var moneyAdapter: MoneyAdapter
     private lateinit var recyclerView: RecyclerView
 

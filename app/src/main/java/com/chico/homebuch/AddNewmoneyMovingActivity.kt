@@ -1,10 +1,8 @@
 package com.chico.homebuch
 
 import android.app.Activity
-import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
@@ -14,12 +12,10 @@ import com.chico.homebuch.database.entity.MovingMoneyInfo
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.text.SimpleDateFormat
-import java.util.*
 
 class AddNewmoneyMovingActivity : AppCompatActivity() {
 
-    private val moneyDao by lazy { AppDataBase.getInstance(applicationContext)?.getMoneyDao() }
+    private val moneyDao by lazy { AppDataBase.getInstance(applicationContext)?.getMovingMoneyDao() }
 
     private lateinit var descriptionEt: EditText
     private lateinit var sumEt: EditText
@@ -57,14 +53,14 @@ class AddNewmoneyMovingActivity : AppCompatActivity() {
             val curDate = System.currentTimeMillis()
 
             CoroutineScope(Dispatchers.IO).launch {
-                moneyDao?.addMovingMoney(
-                    MovingMoneyInfo(
-                        total = sum,
-                        moneyView = view,
-                        description = desc,
-                        date = curDate
-                    )
-                )
+//                moneyDao?.addMovingMoney(
+//                    MovingMoneyInfo(
+//                        sum = sum,
+//                        moneyView = view,
+//                        description = desc,
+//                        date = curDate
+//                    )
+//                )
             }
             setResult(Activity.RESULT_OK)
             finish()

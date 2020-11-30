@@ -35,6 +35,7 @@ class MoneyAdapter : RecyclerView.Adapter<MoneyAdapter.MoneyVH>() {
         private val dateTv: TextView
         private val descriptionTv: TextView
         private val totalTv: TextView
+        private val sumTv: TextView
         private val constraintLayout: ConstraintLayout
 
         init {
@@ -42,6 +43,7 @@ class MoneyAdapter : RecyclerView.Adapter<MoneyAdapter.MoneyVH>() {
                 dateTv = findViewById(R.id.date_tv)
                 descriptionTv = findViewById(R.id.description_tv)
                 totalTv = findViewById(R.id.total_tv)
+                sumTv = findViewById(R.id.sum_tv)
                 constraintLayout = findViewById(R.id.constraint_layout)
             }
         }
@@ -50,7 +52,8 @@ class MoneyAdapter : RecyclerView.Adapter<MoneyAdapter.MoneyVH>() {
             val dataTime = transferDataTime(money.date)
             dateTv.text = dataTime
             descriptionTv.text = money.description
-            totalTv.text = money.total.toString()
+            totalTv.text = "Total amount ${money.total}"
+            sumTv.text = "Transaction ${money.sum}"
 
             if (money.moneyView == 0) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -76,7 +79,6 @@ class MoneyAdapter : RecyclerView.Adapter<MoneyAdapter.MoneyVH>() {
         private fun transferDataTime(long:Long): String? {
             val sdf = SimpleDateFormat("dd/M/yyyy HH:mm:ss")
             return sdf.format(long);
-
         }
     }
 
