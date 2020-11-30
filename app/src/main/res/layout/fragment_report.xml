@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.ReportFragment"
-    android:background="#F8F4F4">
+    >
 
     <TextView
         android:id="@+id/total_money_tv"
@@ -16,7 +16,7 @@
         android:gravity="center_horizontal"
         android:layout_gravity="top"
         tools:text="Total sum"
-        android:textColor="@color/black"
+
         android:layout_margin="16dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -35,8 +35,6 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:itemIconTint="@android:color/black"
-        app:itemTextColor="@android:color/black"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/menu" />

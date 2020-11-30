@@ -3,6 +3,8 @@ package com.chico.homebuch
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Window
+import android.view.WindowManager
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 
@@ -19,6 +21,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        setActivityFlags()
+
         val mySp = getSharedPreferences(APP_PREF, MODE_PRIVATE)
         nav = findNavController(R.id.fragment_container)
 
@@ -31,4 +35,12 @@ class MainActivity : AppCompatActivity() {
             nav.navigate(R.id.firstStartFragment)
         }
     }
+    private fun setActivityFlags() {
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        )
+
+    }
+
 }
