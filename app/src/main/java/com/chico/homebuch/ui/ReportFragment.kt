@@ -31,7 +31,7 @@ class ReportFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var totalMoneyTv: TextView
     private lateinit var fab: FloatingActionButton
-    private lateinit var bottomNav: BottomNavigationView
+//    private lateinit var bottomNav: BottomNavigationView
     private var total = 0.0
 
     override fun onCreateView(
@@ -50,26 +50,30 @@ class ReportFragment : Fragment() {
 
         with(requireActivity()) {
             fab = findViewById(R.id.addNewMovingMoney_button)
-            bottomNav = findViewById(R.id.bottom_navigation)
+//            bottomNav = findViewById(R.id.bottom_navigation)
         }
 
-        bottomNav.setOnNavigationItemSelectedListener {menuItem->
-            when(menuItem.itemId){
-                R.id.income_money_menu_item -> {
-                    updateRecyclerWithCondition(1)
-                    true
-                }
-                R.id.costs_money_menu_item -> {
-                    updateRecyclerWithCondition(0)
-                    true
-                }
-                R.id.all_money_menu_item -> {
-                    updateRecycler()
-                    true
-                }
-                else -> false
-            }
-        }
+//        bottomNav.setOnNavigationItemSelectedListener {menuItem->
+//            when(menuItem.itemId){
+//                R.id.income_money_menu_item -> {
+//                    updateRecyclerWithCondition(1)
+//                    true
+//                }
+//                R.id.costs_money_menu_item -> {
+//                    updateRecyclerWithCondition(0)
+//                    true
+//                }
+//                R.id.all_money_menu_item -> {
+//                    updateRecycler()
+//                    true
+//                }
+//                R.id.statistics_menu_item -> {
+//                    updateRecycler()
+//                    true
+//                }
+//                else -> false
+//            }
+//        }
 
         fab.setOnClickListener {
             val data = Bundle()

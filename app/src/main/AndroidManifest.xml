@@ -10,12 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HomeBuch">
         <activity
-            android:name=".ReportsActivity"
-            android:screenOrientation="sensorPortrait" />
-        <activity
-            android:name=".AddNewmoneyMovingActivity"
-            android:screenOrientation="sensorPortrait" />
-        <activity
             android:name=".MainActivity"
             android:screenOrientation="sensorPortrait">
             <intent-filter>
