@@ -1,21 +1,17 @@
 package com.chico.homebuch
 
 import android.app.Activity
-import android.content.pm.ActivityInfo
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.chico.homebuch.database.AppDataBase
 import com.chico.homebuch.database.entity.MovingMoneyInfo
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.text.SimpleDateFormat
-import java.util.*
 
 class AddNewmoneyMovingActivity : AppCompatActivity() {
 
@@ -69,7 +65,7 @@ class AddNewmoneyMovingActivity : AppCompatActivity() {
             setResult(Activity.RESULT_OK)
             finish()
         } else {
-            Toast.makeText(this, "Заполните все поля", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.input_data_text, Toast.LENGTH_SHORT).show()
         }
     }
 }

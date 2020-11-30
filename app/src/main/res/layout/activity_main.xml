@@ -34,10 +34,11 @@
 
     <Button
         android:id="@+id/reportsButton"
+        android:textSize="@dimen/H2"
+        android:layout_margin="@dimen/doubleMargin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/reports_buttonText"
-        android:textSize="@dimen/H2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
