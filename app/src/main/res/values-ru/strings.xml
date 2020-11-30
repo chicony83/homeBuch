@@ -14,4 +14,7 @@
     <string name="header_24_hour">за 24 часа</string>
     <string name="header_at_last_30_days">за последние 30 дней</string>
     <string name="header_beginning_month">с начала месяца</string>
+    <string name="receipt_transactions">Приходные операции</string>
+    <string name="expenditure_operations">Расходные операции</string>
+    <string name="input_data_text">Введите все данные</string>
 </resources>

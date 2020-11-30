@@ -4,10 +4,9 @@
     style="@style/MainStatisticsArea"
     tools:ignore="MissingConstraints">
 
-    <TableRow android:gravity="center">
-
-        <TextView android:text="за 24 часа" />
-    </TableRow>
+    <TextView
+        android:gravity="center"
+        android:text="@string/header_24_hour" />
 
     <TableRow>
 
@@ -40,7 +39,7 @@
             android:text="@string/balance_text" />
 
         <TextView
-            android:id="@+id/totalMoney24hour_value"
+            android:id="@+id/totalMoneyBalancePer24hour_value"
             style="@style/MainStatisticsRow_value"
             android:text="0" />
     </TableRow>
