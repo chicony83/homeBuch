@@ -11,8 +11,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.chico.homebuch.R
 import com.chico.homebuch.adapter.MoneyAdapter
+import com.chico.homebuch.constants.Const.MOVING_MONEY_KEY
 import com.chico.homebuch.constants.Const.TOTAL_MONEY_KEY
 import com.chico.homebuch.database.AppDataBase
+import com.chico.homebuch.database.entity.MovingMoneyInfo
 import com.chico.homebuch.utils.launchIO
 import com.chico.homebuch.utils.launchUI
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -26,8 +28,19 @@ class ReportFragment : Fragment() {
 
     private val moneyDao by lazy { AppDataBase.getInstance(requireContext())?.getMoneyDao() }
     private val movingDao by lazy { AppDataBase.getInstance(requireContext())?.getMovingMoneyDao() }
+    private val moneyAdapter by lazy {
+        MoneyAdapter(object : MoneyAdapter.Listener {
+            override fun onClick(money: MovingMoneyInfo) {
+                val bundle = Bundle()
+                bundle.putParcelable(MOVING_MONEY_KEY, money)
+                findNavController().navigate(
+                    R.id.action_reportFragment_to_updateMoneyMovingFragment,
+                    bundle
+                )
+            }
+        })
+    }
 
-    private lateinit var moneyAdapter: MoneyAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var totalMoneyTv: TextView
     private lateinit var fab: FloatingActionButton
@@ -53,8 +66,8 @@ class ReportFragment : Fragment() {
             bottomNav = findViewById(R.id.bottom_navigation)
         }
 
-        bottomNav.setOnNavigationItemSelectedListener {menuItem->
-            when(menuItem.itemId){
+        bottomNav.setOnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
                 R.id.income_money_menu_item -> {
                     updateRecyclerWithCondition(1)
                     true
@@ -79,7 +92,6 @@ class ReportFragment : Fragment() {
     }
 
     private fun initRecycler() {
-        moneyAdapter = MoneyAdapter()
         recyclerView = requireActivity().findViewById(R.id.recycler_view)
 
         recyclerView.apply {

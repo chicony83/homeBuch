@@ -20,4 +20,6 @@
     <string name="start">Start</string>
     <string name="hello">Hello</string>
     <string name="desc">desc</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
 </resources>

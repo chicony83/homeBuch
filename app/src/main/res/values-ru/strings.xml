@@ -20,4 +20,7 @@
     <string name="start">Начать</string>
     <string name="hello">Привет</string>
     <string name="desc">desc</string>
+    <string name="update">Обновить</string>
+    <string name="delete">Удалить</string>
+    <string name="enter_you_money">Введите депозит</string>
 </resources>
