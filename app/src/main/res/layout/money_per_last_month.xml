@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/MainStatisticsArea"
+    tools:ignore="MissingConstraints">
+
+    <TextView
+        android:gravity="center"
+        android:text="@string/header_at_last_30_days" />
+
+    <TableRow>
+
+        <TextView
+            style="@style/MainStatisticsRow_text"
+            android:text="@string/incomingMoney_text" />
+
+        <TextView
+            android:id="@+id/incomingMoneyPerLastMonth_value"
+            style="@style/MainStatisticsRow_value"
+            android:text="0" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            style="@style/MainStatisticsRow_text"
+            android:text="@string/costMoney_text" />
+
+        <TextView
+            android:id="@+id/costsMoneyPerLastMonth_value"
+            style="@style/MainStatisticsRow_value"
+            android:text="0" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            style="@style/MainStatisticsRow_text"
+            android:text="@string/balance_text" />
+
+        <TextView
+            android:id="@+id/totalMoneyBalancePerLastMonth_value"
+            style="@style/MainStatisticsRow_value"
+            android:text="0" />
+    </TableRow>
+
+</TableLayout>
+

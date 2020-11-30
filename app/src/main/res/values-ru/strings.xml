@@ -16,8 +16,7 @@
     <string name="header_beginning_month">с начала месяца</string>
     <string name="receipt_transactions">Приходные операции</string>
     <string name="expenditure_operations">Расходные операции</string>
-    <string name="input_data_text">Введите все данные</string>
-    <string name="enter_you_money">Введите ваш баланс</string>
+    <string name="input_data_text">Заполните все поля!</string>
     <string name="start">Начать</string>
     <string name="hello">Привет</string>
     <string name="desc">desc</string>
