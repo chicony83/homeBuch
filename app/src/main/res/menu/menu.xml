@@ -19,10 +19,4 @@
         android:icon="@drawable/ic_costs"
         app:showAsAction="ifRoom"/>
 
-    <item
-        android:id="@+id/statistics_menu_item"
-        android:title="@string/statistics"
-        android:icon="@drawable/ic_info"
-        app:showAsAction="ifRoom"/>
-
 </menu>
