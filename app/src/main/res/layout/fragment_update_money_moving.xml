@@ -3,18 +3,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    style=""
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.AddMoneyMovingFragment">
+    tools:context=".ui.UpdateMoneyMovingFragment">
 
     <TextView
         android:id="@+id/textViewHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/normalMargin"
         android:gravity="center"
         android:text="@string/addingNewMoneyMove_text"
         android:textSize="@dimen/H1"
         android:textStyle="bold"
-        android:layout_margin="@dimen/normalMargin"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
@@ -31,7 +32,7 @@
             tools:ignore="UselessParent">
 
             <RadioButton
-                android:id="@+id/incomingMoney_radio"
+                android:id="@+id/umm_income_rb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/tripleMargin"
@@ -42,7 +43,7 @@
                 app:layout_constraintTop_toTopOf="@id/linearLayout2" />
 
             <RadioButton
-                android:id="@+id/costMoney_radio"
+                android:id="@+id/umm_costs_rb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/doubleMargin"
@@ -71,25 +72,25 @@
         tools:layout_editor_absoluteX="0dp">
 
         <EditText
-            android:id="@+id/description_et"
+            android:id="@+id/umm_description_et"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_margin="@dimen/doubleMargin"
             android:gravity="start"
             android:hint="@string/description_editText"
             android:padding="@dimen/doubleMargin"
-            app:layout_constraintBottom_toTopOf="@+id/sum_et"
+            app:layout_constraintBottom_toTopOf="@+id/umm_sum_et"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="16dp"
             android:inputType="text"
             android:importantForAutofill="no" />
 
         <EditText
-            android:id="@+id/sum_et"
+            android:id="@+id/umm_sum_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/normalMargin"
-            app:layout_constraintBottom_toTopOf="@+id/addingInBase_button"
+            app:layout_constraintBottom_toTopOf="@+id/umm_update_btn"
             tools:layout_editor_absoluteX="8dp"
             android:hint="@string/enter_sum"
             android:inputType="numberDecimal"
@@ -97,8 +98,8 @@
             android:importantForAutofill="no" />
 
         <Button
-            android:text="@string/addingNewMoneyMove_text"
-            android:id="@+id/addingInBase_button"
+            android:text="@string/update"
+            android:id="@+id/umm_update_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -106,6 +107,5 @@
             android:layout_marginEnd="@dimen/doubleMargin"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

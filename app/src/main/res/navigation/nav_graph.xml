@@ -20,10 +20,18 @@
         <action
             android:id="@+id/action_reportFragment_to_addMoneyMovingFragment"
             app:destination="@id/addMoneyMovingFragment" />
+        <action
+            android:id="@+id/action_reportFragment_to_updateMoneyMovingFragment"
+            app:destination="@id/updateMoneyMovingFragment" />
     </fragment>
     <fragment
         android:id="@+id/addMoneyMovingFragment"
         android:name="com.chico.homebuch.ui.AddMoneyMovingFragment"
         android:label="fragment_add_new_money_moving"
         tools:layout="@layout/fragment_add_new_money_moving" />
+    <fragment
+        android:id="@+id/updateMoneyMovingFragment"
+        android:name="com.chico.homebuch.ui.UpdateMoneyMovingFragment"
+        android:label="fragment_update_money_moving"
+        tools:layout="@layout/fragment_update_money_moving" />
 </navigation>

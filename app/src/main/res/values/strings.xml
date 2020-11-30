@@ -19,5 +19,7 @@
     <string name="enter_you_money">Enter you money</string>
     <string name="start">Start</string>
     <string name="hello">Hello</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
     <string name="desc" translatable="false">desc</string>
 </resources>

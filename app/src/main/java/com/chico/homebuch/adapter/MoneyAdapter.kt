@@ -1,5 +1,6 @@
 package com.chico.homebuch.adapter
 
+import android.annotation.SuppressLint
 import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +12,7 @@ import com.chico.homebuch.R
 import com.chico.homebuch.database.entity.MovingMoneyInfo
 import java.text.SimpleDateFormat
 
-class MoneyAdapter : RecyclerView.Adapter<MoneyAdapter.MoneyVH>() {
+class MoneyAdapter(val listener: Listener) : RecyclerView.Adapter<MoneyAdapter.MoneyVH>() {
 
     private var moneyList = ArrayList<MovingMoneyInfo>()
 
@@ -31,7 +32,7 @@ class MoneyAdapter : RecyclerView.Adapter<MoneyAdapter.MoneyVH>() {
         holder.bind(moneyList[position])
     }
 
-    class MoneyVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class MoneyVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val dateTv: TextView
         private val descriptionTv: TextView
         private val totalTv: TextView
@@ -45,9 +46,14 @@ class MoneyAdapter : RecyclerView.Adapter<MoneyAdapter.MoneyVH>() {
                 totalTv = findViewById(R.id.total_tv)
                 sumTv = findViewById(R.id.sum_tv)
                 constraintLayout = findViewById(R.id.constraint_layout)
+
+                setOnClickListener {
+                    listener.onClick(moneyList[layoutPosition])
+                }
             }
         }
 
+        @SuppressLint("SetTextI18n")
         fun bind(money: MovingMoneyInfo) {
             val dataTime = transferDataTime(money.date)
             dateTv.text = dataTime
@@ -76,10 +82,15 @@ class MoneyAdapter : RecyclerView.Adapter<MoneyAdapter.MoneyVH>() {
             }
         }
 
+        @SuppressLint("SimpleDateFormat")
         private fun transferDataTime(long:Long): String? {
             val sdf = SimpleDateFormat("dd/M/yyyy HH:mm:ss")
-            return sdf.format(long);
+            return sdf.format(long)
         }
+    }
+
+    interface Listener {
+        fun onClick(money: MovingMoneyInfo)
     }
 
 }

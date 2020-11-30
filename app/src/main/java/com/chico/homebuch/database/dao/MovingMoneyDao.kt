@@ -1,8 +1,6 @@
 package com.chico.homebuch.database.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import com.chico.homebuch.database.entity.MovingMoneyInfo
 
 @Dao
@@ -15,4 +13,10 @@ interface MovingMoneyDao {
 
     @Insert
     suspend fun addMovingMoney(movingMoneyInfo: MovingMoneyInfo)
+
+    @Delete
+    suspend fun deleteMovingMoney(movingMoneyInfo: MovingMoneyInfo)
+
+    @Update
+    suspend fun updateMovingMoney(movingMoneyInfo: MovingMoneyInfo)
 }
