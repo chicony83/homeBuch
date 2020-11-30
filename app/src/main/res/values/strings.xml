@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">домашняя бухгалтерия</string>
+    <string name="app_name">home bookkeeping</string>
     <string name="incomingMoney_text">income</string>
     <string name="costMoney_text">costs</string>
     <string name="allMoney_text">all</string>
@@ -8,4 +8,5 @@
     <string name="description_text">description</string>
     <string name="description_editText">add a description if necessary</string>
     <string name="enter_sum">Enter sum</string>
+    <string name="reports_buttonText">reports</string>
 </resources>

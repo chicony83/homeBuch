@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">home bookkeeping</string>
+    <string name="app_name">домашняя бухгалтерия</string>
     <string name="incomingMoney_text">доходы</string>
     <string name="costMoney_text">расходы</string>
     <string name="allMoney_text">все</string>
     <string name="addNewMovingMoney_text">добавить приход/расход</string>
     <string name="addingNewMoneyMove_text">добавление</string>
     <string name="description_editText">добавьте описание</string>
-    <string name="description_text">Описание</string>
-    <string name="enter_sum">Введите сумму</string>
+    <string name="description_text">описание</string>
+    <string name="enter_sum">введите сумму</string>
+    <string name="reports_buttonText">отчеты</string>
 </resources>

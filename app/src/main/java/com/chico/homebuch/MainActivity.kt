@@ -20,16 +20,15 @@ import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
 
-    private val movingDao by lazy { AppDataBase.getInstance(application)?.getMoneyDao() }
-    private lateinit var moneyAdapter: MoneyAdapter
-    private lateinit var recyclerView: RecyclerView
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        initRecycler()
-        updateRecycler()
+        val reportsButton = findViewById<Button>(R.id.reportsButton)
+
+        reportsButton.setOnClickListener {
+            startActivity(Intent(this, ReportsActivity::class.java))
+        }
 
         val addNewMoneyMovingButton = findViewById<FloatingActionButton>(R.id.addNewMovingMoney_button)
         addNewMoneyMovingButton.setOnClickListener {
@@ -38,52 +37,6 @@ class MainActivity : AppCompatActivity() {
                 1010
             )
         }
-    }
 
-    private fun initRecycler() {
-        moneyAdapter = MoneyAdapter()
-        recyclerView = findViewById(R.id.recycler_view)
-
-        recyclerView.apply {
-            adapter = moneyAdapter
-            layoutManager = LinearLayoutManager(this@MainActivity)
-        }
-    }
-
-    private fun updateRecycler() {
-        CoroutineScope(Dispatchers.IO).launch {
-            val moneyList = movingDao?.getMovingMoneyInfo()
-            withContext(Dispatchers.Main) {
-                if (moneyList != null) {
-                    moneyAdapter.updateList(moneyList)
-                }
-            }
-        }
-    }
-
-    private fun updateRecyclerWithCondition(view: Int){
-        CoroutineScope(Dispatchers.IO).launch {
-            val moneyList = movingDao?.getMovingMoneyInfoIncomeOrCosts(view)
-            withContext(Dispatchers.Main) {
-                if (moneyList != null) {
-                    moneyAdapter.updateList(moneyList)
-                }
-            }
-        }
-    }
-
-    fun onClick(view: View) {
-        when (view.id) {
-            R.id.incomingMoney_button -> {updateRecyclerWithCondition(1)}
-            R.id.costMoney_button -> {updateRecyclerWithCondition(0)}
-            R.id.allMovingMoney_button -> {updateRecycler()}
-        }
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == 1010 && resultCode == Activity.RESULT_OK){
-            updateRecycler()
-        }
     }
 }
