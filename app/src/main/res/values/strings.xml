@@ -20,6 +20,8 @@
     <string name="start">Start</string>
     <string name="hello">Hello</string>
     <string name="update">Update</string>
+    <string name="transaction">Transaction %1$s</string>
+    <string name="remainder">Remainder %1$s</string>
     <string name="delete">Delete</string>
     <string name="desc" translatable="false">desc</string>
 </resources>

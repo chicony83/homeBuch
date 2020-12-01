@@ -53,13 +53,13 @@ class MoneyAdapter(val listener: Listener) : RecyclerView.Adapter<MoneyAdapter.M
             }
         }
 
-        @SuppressLint("SetTextI18n")
+
         fun bind(money: MovingMoneyInfo) {
             val dataTime = transferDataTime(money.date)
             dateTv.text = dataTime
             descriptionTv.text = money.description
-            totalTv.text = "Total amount ${money.total}"
-            sumTv.text = "Transaction ${money.sum}"
+            totalTv.text = itemView.resources.getString(R.string.remainder, money.total.toString())
+            sumTv.text = itemView.resources.getString(R.string.transaction, money.sum.toString())
 
             if (money.moneyView == 0) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
