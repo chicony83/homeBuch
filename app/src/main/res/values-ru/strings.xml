@@ -22,7 +22,11 @@
     <string name="desc">desc</string>
     <string name="update">Обновить</string>
     <string name="delete">Удалить</string>
+    <string name="deletion">Удаление</string>
+    <string name="delete_and_recalculate">Удалить и пересчитать</string>
+    <string name="cancel">Отмена</string>
     <string name="transaction">Транзакция %1$s</string>
     <string name="remainder">Остаток %1$s</string>
+    <string name="are_you_sure">Вы уверены?</string>
     <string name="enter_you_money">Введите депозит</string>
 </resources>

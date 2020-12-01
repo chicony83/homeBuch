@@ -6,6 +6,8 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
+    <color name="green_night">#26bb5f</color>
+    <color name="green_day">#009440</color>
 
     <color name="grayLight">#CCCCCC</color>
     <color name="grayNormal">#9E9E9E</color>

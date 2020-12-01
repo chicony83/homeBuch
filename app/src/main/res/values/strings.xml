@@ -23,5 +23,9 @@
     <string name="transaction">Transaction %1$s</string>
     <string name="remainder">Remainder %1$s</string>
     <string name="delete">Delete</string>
+    <string name="deletion">Deletion</string>
+    <string name="delete_and_recalculate">Delete and recalculate</string>
+    <string name="cancel">Cancel</string>
+    <string name="are_you_sure">Are you sure?</string>
     <string name="desc" translatable="false">desc</string>
 </resources>
