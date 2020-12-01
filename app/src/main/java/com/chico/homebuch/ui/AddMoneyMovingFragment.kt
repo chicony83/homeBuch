@@ -1,10 +1,12 @@
 package com.chico.homebuch.ui
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
@@ -87,10 +89,16 @@ class AddMoneyMovingFragment : Fragment() {
             launchIO {
                 moneyDao?.updateMoney(Money(myMoney = total))
             }
-
+            closeKeyboard()
             findNavController().popBackStack()
         } else {
             Toast.makeText(context, "Заполните все поля", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun closeKeyboard(){
+        val imm = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val v = requireActivity().currentFocus
+        imm.hideSoftInputFromWindow(v?.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
     }
 }

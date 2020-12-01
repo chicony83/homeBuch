@@ -10,6 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.chico.homebuch.R
 import com.chico.homebuch.database.entity.MovingMoneyInfo
+import java.text.DecimalFormat
 import java.text.SimpleDateFormat
 
 class MoneyAdapter(val listener: Listener) : RecyclerView.Adapter<MoneyAdapter.MoneyVH>() {
@@ -58,8 +59,14 @@ class MoneyAdapter(val listener: Listener) : RecyclerView.Adapter<MoneyAdapter.M
             val dataTime = transferDataTime(money.date)
             dateTv.text = dataTime
             descriptionTv.text = money.description
-            totalTv.text = itemView.resources.getString(R.string.remainder, money.total.toString())
-            sumTv.text = itemView.resources.getString(R.string.transaction, money.sum.toString())
+            totalTv.text = itemView.resources.getString(
+                R.string.remainder,
+                DecimalFormat("#0.00").format(money.total)
+            )
+            sumTv.text = itemView.resources.getString(
+                R.string.transaction,
+                DecimalFormat("#0.00").format(money.sum)
+            )
 
             if (money.moneyView == 0) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -83,7 +90,7 @@ class MoneyAdapter(val listener: Listener) : RecyclerView.Adapter<MoneyAdapter.M
         }
 
         @SuppressLint("SimpleDateFormat")
-        private fun transferDataTime(long:Long): String? {
+        private fun transferDataTime(long: Long): String? {
             val sdf = SimpleDateFormat("dd/M/yyyy HH:mm:ss")
             return sdf.format(long)
         }

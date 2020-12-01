@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ReportFragment"
-    >
+    tools:context=".ui.ReportFragment">
 
     <TextView
         android:id="@+id/total_money_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textSize="30sp"
-        android:gravity="center_horizontal"
         android:layout_gravity="top"
-        tools:text="Total sum"
-
-        android:layout_margin="16dp"/>
+        android:layout_margin="@dimen/doubleMargin"
+        android:gravity="center_horizontal"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:maxLength="1000000"
+        tools:text="Total sum" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
@@ -28,8 +29,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/total_money_tv"
         tools:listitem="@layout/money_item"
-        android:layout_marginTop="16dp"/>
-
+        android:layout_marginTop="@dimen/doubleMargin"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -38,7 +38,6 @@
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/menu" />
-
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addNewMovingMoney_button"

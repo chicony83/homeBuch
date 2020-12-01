@@ -23,6 +23,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.text.DecimalFormat
 
 class ReportFragment : Fragment() {
 
@@ -127,7 +128,7 @@ class ReportFragment : Fragment() {
         launchIO {
             total = moneyDao?.getMoney()?.myMoney ?: 0.0
             launchUI {
-                totalMoneyTv.text = total.toString()
+                totalMoneyTv.text = DecimalFormat("#0.00").format(total)
             }
         }
     }

@@ -30,7 +30,8 @@
         app:layout_constraintTop_toTopOf="parent"
         android:singleLine="true"
         android:inputType="number"
-        android:autofillHints="no" />
+        android:autofillHints="no"
+        android:maxLength="10"/>
 
     <Button
         android:id="@+id/start_btn"
